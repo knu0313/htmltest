@@ -9,13 +9,41 @@
   html,
   body {
     height: 100%;
+    padding: 0;
+    margin: 0;
   }
   body {
     overscroll-behavior-y: none;
   }
+  .wrap {
+    min-height: 100vh;
+  }
+  .main {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 4px solid red;
+  }
+  .sticky {
+    height: 50px;
+    background-color: blue;
+  }
+  .test {
+    flex: 1;
+  }
 </style>
 <body>
-  htmltest
-  <input type="text">
+  <div class="wrap">
+    <div class="main">
+      <div class="test">
+        <input type="text">
+
+      </div>
+      <div class="sticky">
+        test
+      </div>
+    </div>
+  </div>
 </body>
 </html>
