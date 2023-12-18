@@ -24,8 +24,10 @@
   }
   .test {
     position: sticky;
+    height: 20px;
+    background-color: red;
     left: 0;
-    bottom: 0;
+    top: calc(100vh - 20px);
   }
 </style>
 <body>
@@ -33,6 +35,7 @@
     <div class="inner">
       <div class="main">
         <input type="text">
+        <div class="dd"></div>
       </div>
       <div class="test">
         test
@@ -40,4 +43,11 @@
     </div>
   </div>
 </body>
+<script>
+
+window.addEventListener('resize', function() {
+  const a = window.scrollY;
+  document.querySelector('.dd').innerText += a;
+});
+</script>
 </html>
