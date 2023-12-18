@@ -10,24 +10,22 @@
   body {
     padding: 0;
     margin: 0;
-    position: relative;
     height: 100%;
-  }
-  .wrap {
+    width: 100%;
     position: relative;
-    height: 100%;
   }
   .inner {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
   }
   .main {
     flex: auto;
-    overflow: hidden auto;
   }
   .test {
-    flex: none;
+    position: sticky;
+    left: 0;
+    bottom: 0;
   }
 </style>
 <body>
