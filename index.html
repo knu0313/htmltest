@@ -6,47 +6,17 @@
   <title>htmltest</title>
 </head>
 <style>
-  html,
-  body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  body {
-    overscroll-behavior-y: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-  .wrap {
-    min-height: 100vh;
-  }
-  .main {
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 4px solid red;
-  }
-  .sticky {
-    height: 50px;
-    background-color: blue;
-  }
-  .test {
-    flex: 1;
-  }
 </style>
 <body>
   <div class="wrap">
     <div class="main">
       <div class="test">
-        <input type="text">1
-
+        <input type="text">
       </div>
       <div class="sticky">
-        test
+        <button id="test1" onclick="document.querySelector('#test3').focus()">1</button>
+        <button id="test2">2</button>
+        <button id="test3">3</button>
       </div>
     </div>
   </div>
