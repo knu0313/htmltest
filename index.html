@@ -6,16 +6,48 @@
   <title>htmltest</title>
 </head>
 <style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.wrap {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto 274px 476px 274px auto ;
+  grid-template-rows: auto;
+}
+.header {
+  grid-column: 2 / 5;
+  background-color: #eee;
+  height: 60px;
+  position: sticky;
+  top: 0;
+}
+.main {
+  grid-column: 2 / 5;
+  min-height: calc(100vh - 60px);
+}
+.footer {
+  grid-column: 2 / 5;
+}
+.aside {
+  grid-column: 4 / 5;
+}
+.header + .aside {
+  grid-column: 2 / 3;
+}
+.header + .aside + .main {
+  grid-column: 3 / 5;
+}
 </style>
 <body>
-  <div class="wrap">
-    <div class="main">
-      <div class="sticky">
-        <button id="test1" onclick="document.querySelector('#test3').focus()">1</button>
-        <br><br><button id="test2">2</button>
-        <br><br><button id="test3">3</button>
-      </div>
-    </div>
+  <div class="grid">
+    <header class="header">header</header>
+    <main class="main">main</main>
+    <aside class="aside">aside</aside>
+    <footer class="footer">footer</footer>
   </div>
 </body>
 </html>

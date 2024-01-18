@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scale=0">
+  <title>htmltest</title>
+</head>
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+}
+.wrap {
+  display: grid;
+  width: 100%;
+  min-height: 100%;
+  grid-template-columns: auto 274px 476px 274px auto ;
+  grid-template-rows: 60px minmax(0, auto) 100px;
+  grid-template-areas: "header header header header header" "aside aside main main main" "footer footer footer footer footer";
+}
+.wrap.tp1 {
+  grid-template-areas: "header header header header header" ". main main main ." "footer footer footer footer footer";
+}
+.wrap.tp1 .aside {
+  display: none;
+}
+.header {
+  grid-area: header;
+  background-color: skyblue;
+  grid-auto-columns: 60px;
+}
+.aside {
+  grid-area: aside;
+  background-color: yellow;
+  overflow: auto;
+}
+.aside_inner {
+  width: 274px;
+  margin-left: auto;
+}
+.main {
+  grid-area: main;
+  overflow: auto;
+}
+.main_inner {
+  width: calc(476px + 274px);
+  margin-right: auto;
+}
+.footer {
+  grid-area: footer;
+  background-color: pink;
+}
+</style>
+<body>
+  <div class="wrap">
+    <header class="header">header</header>
+    <aside class="aside">
+      <div class="aside_inner">
+        aside
+        <div style="height: 200vh;"></div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="main_inner">
+        main
+        <div style="height: 200vh;"></div>
+      </div>
+    </main>
+    <footer class="footer">footer</footer>
+  </div>
+</body>
+</html>
